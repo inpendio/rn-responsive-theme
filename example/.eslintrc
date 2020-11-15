@@ -10,6 +10,7 @@
     "prettier",
     // "redux-saga",
     "react",
+    "react-native",
     "react-hooks",
     "jsx-a11y",
     "@typescript-eslint",
@@ -19,6 +20,7 @@
     "browser": true,
     "node": true,
     "es6": true,
+    "react-native/react-native": true
   },
   "parserOptions": {
     "ecmaVersion": 6,

@@ -1,18 +1,25 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 interface IOrientationProvider {
-    currentOrientation: string;
-    lockOrientation(mode:string):void;
-
+  currentOrientation: string;
+  lockOrientation(mode: string): void;
 }
 
-interface IBasicProviderProps{
-    children: ReactNode
+interface IBasicProvider {
+  width: number;
+  height: number;
+  OS?: string;
+  isTablet: boolean;
+  isXs: boolean;
 }
 
-interface INotificator{
-    onChange(newConfig: object):void
+interface IProviderProps {
+  children: ReactNode;
 }
-interface INotifierPool{
-    notifierPool: INotificator[];
+
+interface INotificator {
+  onChange(newConfig: object): void;
+}
+interface INotifierPool {
+  notifierPool: INotificator[];
 }
