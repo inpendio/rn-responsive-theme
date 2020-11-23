@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { isEqual, calculateStyle, useConst } from 'utils';
+import { isEqual, calculateStyle } from 'utils';
 import useThemeState from './useThemeState';
 
 const useResponsive = (
