@@ -1,4 +1,4 @@
-import React,{useState, useRef, useEffect} from 'react';
+import React,{useState, useRef, useEffect, ReactElement} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,18 +16,22 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import ThemeProvider from 'rn-responsive-theme';
-// import Root from './src/Root';
+import Root from './src/Root';
 
 declare const global: { HermesInternal: null | {} };
 
-const App = () => {
+console.log(111,{global,ThemeProvider});
+
+
+function App():ReactElement {
+  console.log(333,{global},View);
   return (
-    <ThemeProvider>
+    <ThemeProvider view={View}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <Text>test</Text>
+        <Root/>
       </SafeAreaView>
-    </ThemeProvider>
+</ThemeProvider>
   );
 };
 

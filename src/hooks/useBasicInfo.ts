@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { useColorScheme, ColorSchemeName } from 'react-native';
-import { BasicContext } from '../providers/BasicProvider';
+import { useColorScheme } from 'react-native';
+import { BasicContext } from '../contexts';
 
-export interface IBasicInfo {
+/* export interface IBasicInfo {
   '@web': boolean;
   '@tablet': boolean;
   '@xs': boolean;
@@ -11,7 +11,7 @@ export interface IBasicInfo {
   width: number;
   height: number;
   systemTheme: ColorSchemeName;
-}
+} */
 
 export default function useBasicInfo(): IBasicInfo {
   const { width, height, OS, isXs, isTablet } = useContext(BasicContext);
@@ -28,6 +28,7 @@ export default function useBasicInfo(): IBasicInfo {
   });
 
   useEffect(() => {
+    console.log('@useBasicInfo/useEffect');
     setBasicInfo({
       '@android': OS === 'android',
       '@ios': OS === 'ios',

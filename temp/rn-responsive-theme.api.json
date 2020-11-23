@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.11.2",
+    "schemaVersion": 1003,
+    "oldestForwardsCompatibleVersion": 1001
+  },
+  "kind": "Package",
+  "canonicalReference": "rn-responsive-theme!",
+  "docComment": "",
+  "name": "rn-responsive-theme",
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "rn-responsive-theme!",
+      "name": "",
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "rn-responsive-theme!ThemeProvider:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default function ThemeProvider({ children }: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IProviderProps",
+              "canonicalReference": "!IProviderProps:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "ReactElement",
+              "canonicalReference": "@types/react!~React.ReactElement:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ children }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "name": "ThemeProvider"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "rn-responsive-theme!useBasicInfo:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export default function useBasicInfo(): "
+            },
+            {
+              "kind": "Reference",
+              "text": "IBasicInfo",
+              "canonicalReference": "!IBasicInfo:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "useBasicInfo"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "rn-responsive-theme!useResponsive:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "useResponsive: "
+            },
+            {
+              "kind": "Content",
+              "text": "(style: object) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "NamedStyles",
+              "canonicalReference": "!NamedStyles:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<any>"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "useResponsive",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "rn-responsive-theme!useThemeState:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "useResponsive: "
+            },
+            {
+              "kind": "Content",
+              "text": "() => "
+            },
+            {
+              "kind": "Reference",
+              "text": "IResponsiveState",
+              "canonicalReference": "!IResponsiveState:interface"
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "useThemeState",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        }
+      ]
+    }
+  ]
+}

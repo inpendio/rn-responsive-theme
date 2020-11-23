@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { AppState } from 'react-native';
 
-export interface IUseBackgroundHandler {
+/* export interface IUseBackgroundHandler {
   onActive?: { (): void };
   onBackground?: { (): void };
-}
+} */
 
 const useBackgroundHandler = ({
   onActive,

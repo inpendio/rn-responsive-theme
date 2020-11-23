@@ -1,5 +1,4 @@
 import React, {
-  createContext,
   useCallback,
   useEffect,
   useState,
@@ -7,25 +6,7 @@ import React, {
 } from 'react';
 
 import Orientation from 'react-native-orientation-locker';
-import { IProviderProps, IOrientationProvider } from './types';
-
-export enum ORIENTATIONS {
-    PORTRAIT = 'portrait',
-    LANDSCAPE = 'landscape',
-    'PORTRAIT-UPSIDEDOWN'='portrait',
-    'LANDSCAPE-LEFT'='landscape',
-    'LANDSCAPE-RIGHT'='landscape'
-
-}
-
-export const OrientationProviderDefaults: IOrientationProvider = {
-  currentOrientation: ORIENTATIONS.PORTRAIT,
-  lockOrientation() { },
-};
-
-export const OrientationContext = createContext<IOrientationProvider>(
-  OrientationProviderDefaults
-);
+import { OrientationContext, ORIENTATIONS } from '../contexts';
 
 export default function OrientationProvider({
   children,
@@ -39,17 +20,17 @@ export default function OrientationProvider({
       Orientation.lockToPortrait();
   }, []);
 
-  const setOrientationListener = (newOrientation): void => {
+  const setOrientationListener= (newOrientation): void => {
     if (newOrientation) setOrientation(ORIENTATIONS[newOrientation]);
   };
 
   useEffect(() => {
-    Orientation.getDeviceOrientation(setOrientationListener);
+    Orientation.addDeviceOrientationListener(setOrientationListener);
     Orientation.addOrientationListener(setOrientationListener);
-    return Orientation.removeAllListeners();
+    return ():void=>{
+      Orientation.removeAllListeners();
+    };
   }, []);
-
-  console.log({ currentOrientation });
 
   return (
     <OrientationContext.Provider

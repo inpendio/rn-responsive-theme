@@ -15,23 +15,19 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {useResponsive} from 'rn-responsive-theme';
+import {useResponsive,useBasicInfo} from 'rn-responsive-theme';
 
-declare const global: { HermesInternal: null | {} };
 
 const Root = () => {
     const styles = useResponsive(styleObj);
+    const basicInfo = useBasicInfo();
+    console.log(basicInfo);
   return (
 
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>

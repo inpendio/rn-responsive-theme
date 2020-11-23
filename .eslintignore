@@ -6,4 +6,7 @@ server/
 node_modules
 coverage
 build
-node_modules
+node_modules/
+example
+dist
+api-extractor.json

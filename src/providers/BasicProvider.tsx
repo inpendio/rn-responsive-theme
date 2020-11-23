@@ -1,20 +1,20 @@
 import React, {
-  createContext,
-  useCallback,
+  // createContext,
+  // useCallback,
   useEffect,
   useState,
   ReactElement,
 } from 'react';
 import {Dimensions,PixelRatio,Platform} from 'react-native';
 import {isTablet as isTabletInfo} from 'react-native-device-info';
-import { IProviderProps, IBasicProvider } from './types';
-import {useBackgroundHandler} from '../hooks';
+import {BasicContext} from '../contexts';
+import useBackgroundHandler from '../hooks/useBackgroundHandler';
   
 const { height:initHeight, width:initWidth } = Dimensions.get('window');
 
 
   
-export const BasicProviderDefaults: IBasicProvider = {
+/* export const BasicProviderDefaults: IBasicProvider = {
   width:0,
   height: 0,
   OS:undefined,
@@ -24,7 +24,7 @@ export const BasicProviderDefaults: IBasicProvider = {
   
 export const BasicContext = createContext<IBasicProvider>(
   BasicProviderDefaults
-);
+); */
   
 export default function BasicProvider({
   children,
