@@ -1,24 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { isEqual, calculateStyle, useConst } from 'utils';
 import useThemeState from './useThemeState';
-import { isEqual, calculateStyle } from '../utils';
 
-const useResponsive = (style: object): NamedStyles<any> => {
+const useResponsive = (
+  style: object,
+  { localStyles }: IResponsiveHookAdditionalArgs
+): NamedStyles<any> => {
   const themeState = useThemeState();
   const [currentStyle, setCurrentStyle] = useState(null);
 
   // Use deep compare of the style object to prevent infinite renders
-  const previousStyleRef = useRef(style);
+  const previousStyleRef = useRef<object | null>(null);
 
   useEffect(() => {
-    // const newStyle = StyleSheet.create(calculateStyle(style, themeState));
-    const isStyleEqual = isEqual(previousStyleRef.current, style);
-    console.log({ isStyleEqual, style, ref: previousStyleRef.current });
+    const newStyle = StyleSheet.create(
+      calculateStyle(style, { ...themeState, localStyles })
+    );
+    const isStyleEqual = isEqual(previousStyleRef.current, newStyle);
     if (!isStyleEqual) {
-      setCurrentStyle(StyleSheet.create(calculateStyle(style, themeState)));
+      setCurrentStyle(newStyle);
       previousStyleRef.current = style;
     }
-  }, [themeState, style]);
+  }, [themeState, style, localStyles]);
 
   // Return the calculated styles on the first render
   return currentStyle || StyleSheet.create(calculateStyle(style, themeState));

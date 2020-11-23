@@ -11,7 +11,7 @@
     "module": "esnext", //commonjs destroys 'dynamic imports' which is used for code splitting
     "noImplicitAny": false,
     "preserveConstEnums": true,
-    "baseUrl": "./app",
+    "baseUrl": "./src",
     "jsx": "react", // process JSX
     "lib": ["dom", "es5", "es6", "es7", "es2017","esnext","dom.iterable",],
     "allowSyntheticDefaultImports": true, // no errors with commonjs modules interop
@@ -38,5 +38,11 @@
   },
   "include": [
     "src"
-  ]
+  ],
+  "paths":{
+    "utils/*":["utils/*"],
+    "hooks/*":["hooks/*"],
+    "contexts/*":["contexts/*"],
+    "providers/*":["providers/*"],
+  }
 }

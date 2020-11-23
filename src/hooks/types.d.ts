@@ -20,17 +20,10 @@ interface IOrientationInfo {
   '@portrait': boolean;
 }
 
-/* interface IThemeState {
-  IOrientationInfo;
-  IBasicInfo;
-} */
-
-/* interface IOrientationInfo {
-  orientation?: string;
-  '@landscape': boolean;
-  '@portrait': boolean;
-} */
-
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
 
 interface IResponsiveState extends IBasicInfo, IOrientationInfo {}
+
+interface IResponsiveHookAdditionalArgs {
+  localStyles?: object;
+}

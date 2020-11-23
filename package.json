@@ -17,7 +17,7 @@
         "versionup": "node ./node_modules/version-up/bin.js",
         "build:deploy": "yarn versionup && yarn build && yarn deploy",
         "deploy": "node ./cpScript.js",
-        "extractApi":"node node_modules/@microsoft/api-extractor/bin/api-extractor run --local --verbose --diagnostics",
+        "extractApi": "node node_modules/@microsoft/api-extractor/bin/api-extractor run --local --verbose --diagnostics",
         "prepublish": "yarn build && yarn extractApi"
     },
     "devDependencies": {
@@ -32,6 +32,7 @@
         "eslint": "^7.13.0",
         "eslint-config-airbnb-typescript": "^12.0.0",
         "eslint-config-prettier": "^6.15.0",
+        "eslint-import-resolver-alias": "^1.1.2",
         "eslint-import-resolver-typescript": "^2.3.0",
         "eslint-plugin-import": "^2.22.1",
         "eslint-plugin-jsx-a11y": "^6.4.1",

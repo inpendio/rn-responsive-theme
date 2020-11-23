@@ -52,6 +52,17 @@
       "@typescript-eslint/parser": [".ts", ".tsx"],
     },
       "import/ignore": ["types"],
+      "import/resolver": {
+        // "node": {
+        //   "extensions": [".js", ".jsx", ".json", ".native.js"]
+        // },
+        "alias": [
+          ["utils/*","utils/*"],
+          ["hooks/*","hooks/*"],
+          ["contexts/*","contexts/*"],
+          ["providers/*","providers/*"],
+        ]
+      }
     }
     
 }

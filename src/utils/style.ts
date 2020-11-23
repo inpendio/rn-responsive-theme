@@ -4,6 +4,14 @@ type CalcListenersResult = string[];
 export const calculateStyle = (style, themeState): CalcStyleResult => {
   if (typeof style === 'string' && style[0] === '$') {
     if (themeState.globalStyles[style]) return themeState.globalStyles[style];
+    if (
+      themeState.localStyles &&
+      themeState.localStyles[style] &&
+      themeState.globalStyles[themeState.localStyles[style]]
+    )
+      return themeState.globalStyles[themeState.localStyles[style]];
+    if (themeState.localStyles && themeState.localStyles[style])
+      return themeState.localStyles[style];
     return style;
   }
   if (typeof style !== 'object') {
