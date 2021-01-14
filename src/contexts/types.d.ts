@@ -11,6 +11,10 @@ interface IBasicProvider {
   isXs: boolean;
 }
 
+interface IStyleProvider {
+  style: object;
+}
+
 /* enum ORIENTATIONS {
   PORTRAIT = 'portrait',
   LANDSCAPE = 'landscape',

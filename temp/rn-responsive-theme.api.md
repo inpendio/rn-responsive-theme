@@ -7,15 +7,21 @@
 import { ReactElement } from 'react';
 
 // @public (undocumented)
-function ThemeProvider({ children }: IProviderProps): ReactElement;
+function ThemeProvider({ children, style }: IThemeProviderProps): ReactElement;
 
 export default ThemeProvider;
+
+// @public (undocumented)
+export const useBackgroundHandler: ({ onActive, onBackground, }: IUseBackgroundHandler) => void;
 
 // @public (undocumented)
 export function useBasicInfo(): IBasicInfo;
 
 // @public (undocumented)
-export const useResponsive: (style: object) => NamedStyles<any>;
+export function useOrientation(): IOrientationInfo;
+
+// @public (undocumented)
+export const useResponsive: IResponsiveHook;
 
 // @public (undocumented)
 export const useThemeState: () => IResponsiveState;

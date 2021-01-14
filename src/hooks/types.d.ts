@@ -20,10 +20,16 @@ interface IOrientationInfo {
   '@portrait': boolean;
 }
 
+type IGlobalStyles = object;
+
 type NamedStyles<T> = { [P in keyof T]: ViewStyle | TextStyle | ImageStyle };
 
 interface IResponsiveState extends IBasicInfo, IOrientationInfo {}
 
 interface IResponsiveHookAdditionalArgs {
   localStyles?: object;
+}
+
+interface IResponsiveHook {
+  (style: object, other?: IResponsiveHookAdditionalArgs): NamedStyles<any>;
 }

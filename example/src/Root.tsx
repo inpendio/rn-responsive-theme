@@ -16,12 +16,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {useResponsive,useBasicInfo} from 'rn-responsive-theme';
+import {useTest} from './utils';
 
 
-const Root = () => {
+function Root (props) {
     const styles = useResponsive(styleObj);
-    const basicInfo = useBasicInfo();
-    console.log(basicInfo);
   return (
 
         <ScrollView
